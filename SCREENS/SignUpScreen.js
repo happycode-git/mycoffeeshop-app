@@ -31,8 +31,9 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
   const [passwordConf, setPasswordConf] = useState("");
 
   function onSignUp() {
+    setLoading(true)
     firebase_GetAllDocuments(
-      setFakeLoading,
+      setLoading,
       "Users",
       (users) => {
         if (users.length > 0) {
@@ -65,11 +66,12 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
         }
       },
       0,
-      "asc",
-      "Email",
       "Email",
       "==",
-      email
+      email,
+      false,
+      null,
+      null
     );
   }
 
