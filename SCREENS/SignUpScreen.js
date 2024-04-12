@@ -25,7 +25,7 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
   const [fakeLoading, setFakeLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [displayName, setDisplayName] = useState("");
+  const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConf, setPasswordConf] = useState("");
@@ -47,7 +47,7 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
             FirstName: firstName,
             LastName: lastName,
             Email: email,
-            DisplayName: displayName,
+            Phone: phone,
             // OTHER PROPERTIES
           };
           auth_CreateUser(
@@ -127,13 +127,13 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
               {/* DISPLAY NAME */}
               <View>
                 <TextView theme={theme} size={13}>
-                  Display Name
+                  Phone
                 </TextView>
                 <Spacer height={4} />
                 <TextFieldOne
-                  placeholder={"ex. Bagelphoria"}
-                  value={displayName}
-                  setter={setDisplayName}
+                  placeholder={"ex. (123)456-7890"}
+                  value={phone}
+                  setter={setPhone}
                   theme={theme}
                 />
               </View>
@@ -217,7 +217,7 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
           {firstName !== "" &&
             lastName !== "" &&
             email !== "" &&
-            displayName !== "" &&
+            phone !== "" &&
             password.length >= 8 &&
             password === passwordConf && (
               <ButtonOne

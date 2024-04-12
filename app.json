@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "IICApplineLibrary",
-    "slug": "iic-appline-library",
+    "name": "MyCoffeeShop App",
+    "slug": "mycoffeeshop-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.iicdev.IICApplineLibrary"
+      "bundleIdentifier": "com.iicdev.MyCoffeeShopApp"
     },
     "notifications": {
       "color": "#ffffff",
@@ -32,9 +32,9 @@
           "priority": "max",
           "sound": true,
           "vibrate": true,
-          "firebaseSenderId": "931444482872",
-          "firebaseAppId": "1:931444482872:android:07700be798805c3842d7cd",
-          "firebaseApiKey": "AIzaSyD6dYviMLxisVSdckCID3rSNR_4IIEApUE"
+          "firebaseSenderId": "147422283500",
+          "firebaseAppId": "1:147422283500:android:b4535d7513c29924e487c9",
+          "firebaseApiKey": "AIzaSyDS57m_4puje1jL3_Wkx13DyplQuHqyfpc"
         }
       }
     },
@@ -54,7 +54,7 @@
         "android.permission.RECEIVE_BOOT_COMPLETED",
         "android.permission.SCHEDULE_EXACT_ALARM"
       ],
-      "package": "com.iicdev.IICApplineLibrary"
+      "package": "com.iicdev.MyCoffeeShopApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -89,7 +89,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "42ec020e-de92-4dbb-abff-f6097a2bbf88"
+        "projectId": "c6714f14-9583-4733-b8d8-edc1fe1efed9"
       }
     }
   }

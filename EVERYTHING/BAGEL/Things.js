@@ -90,7 +90,7 @@ export const searchClient = algoliasearch(
   "2DOEMGLWFB",
   "7cb8106771824a1a327f1e7cb9d81feb"
 );
-export const c_projectID = "178e14d8-0dce-4f61-8732-26291c7f545e";
+export const c_projectID = "c6714f14-9583-4733-b8d8-edc1fe1efed9";
 export const c_googleMapsAPI = "AIzaSyD0y3c_it9f63AILxXHR-Y8YprSynEfxsY";
 export var me = {};
 export var myID = "test";
@@ -105,13 +105,13 @@ export var myCoords = {
 };
 // Config
 const firebaseConfig = {
-  apiKey: "AIzaSyAMkZs0qvSSYVfA4pOMzSkXl-Nkut7raqw",
-  authDomain: "iic-appline-template.firebaseapp.com",
-  projectId: "iic-appline-template",
-  storageBucket: "iic-appline-template.appspot.com",
-  messagingSenderId: "957439211423",
-  appId: "1:957439211423:web:57d7872b6486b922102faa",
-  measurementId: "G-D2Y4Q8QLJW",
+  apiKey: "AIzaSyAOcdO9MKBgqFdQ18zs93atYPMxcrHIzUY",
+  authDomain: "coffeeshopapp-b639b.firebaseapp.com",
+  projectId: "coffeeshopapp-b639b",
+  storageBucket: "coffeeshopapp-b639b.appspot.com",
+  messagingSenderId: "147422283500",
+  appId: "1:147422283500:web:660263371b6c6f95e487c9",
+  measurementId: "G-C7QVG6XZ8Q"
 };
 
 // APP INFO
@@ -548,7 +548,7 @@ export function MenuBar({
   theme,
 }) {
   return (
-    <View style={[layout.absolute, { bottom: 20, right: 0, left: 0 }]}>
+    <View style={[layout.absolute, { bottom: Platform.OS === "ios" ? 20 : 10, right: 0, left: 0 }]}>
       <View
         style={[
           layout.fit_width,
@@ -758,8 +758,7 @@ export function SideBySide({ children, gap }) {
   return (
     <View
       style={[
-        layout.horizontal,
-        { alignItems: "center", gap: gap !== undefined ? gap : 10 },
+        { flexDirection: "row", alignItems: "center", gap: gap !== undefined ? gap : 10 },
       ]}
     >
       {children}
@@ -1795,7 +1794,7 @@ export function BorderPill({
     </View>
   );
 }
-export function Divider(color, marginV, theme) {
+export function Divider({color, marginV, theme}) {
   return (
     <View
       style={[
@@ -4154,6 +4153,14 @@ export function checkTime(time, startTime, endTime) {
   const totalMinutes = hour * 60 + minute;
 
   return totalMinutes >= startTotalMinutes && totalMinutes <= endTotalMinutes;
+}
+export function convertDayOfWeekToNum(dayOfWeek) {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days.indexOf(dayOfWeek);
+}
+export function convertNumToDayOfWeek(dayIndex) {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[dayIndex];
 }
 export function getDaysOfMonth(monthNum, year) {
   const daysInMonth = new Date(year, monthNum, 0).getDate();

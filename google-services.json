@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "957439211423",
-    "project_id": "iic-appline-template",
-    "storage_bucket": "iic-appline-template.appspot.com"
+    "project_number": "147422283500",
+    "project_id": "coffeeshopapp-b639b",
+    "storage_bucket": "coffeeshopapp-b639b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:957439211423:android:999bbc221b8b27cf102faa",
+        "mobilesdk_app_id": "1:147422283500:android:b4535d7513c29924e487c9",
         "android_client_info": {
-          "package_name": "com.iicdev.IICApplineLibrary"
+          "package_name": "com.iicdev.MyCoffeeShopAdminApp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDHrcKab_QfIB6BGs4mArbYXClYguo8Td8"
+          "current_key": "AIzaSyDS57m_4puje1jL3_Wkx13DyplQuHqyfpc"
         }
       ],
       "services": {
