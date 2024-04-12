@@ -24,7 +24,16 @@ export function Login({ navigation, route }) {
       {/* TOP */}
       <View style={[layout.padding]}>
         <SeparatedView>
-          <View></View>
+        <ButtonOne
+            backgroundColor={"transparent"}
+            padding={0}
+            radius={0}
+            onPress={() => {
+              navigation.navigate("start-menu");
+            }}
+          >
+            <TextPill theme={theme} text={"browse"} textSize={18} />
+          </ButtonOne>
           <ButtonOne
             backgroundColor={"transparent"}
             padding={0}

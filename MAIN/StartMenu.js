@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   AsyncImage,
+  ButtonOne,
   Divider,
   Grid,
   MenuBar,
@@ -31,7 +32,7 @@ import { ScrollView, TouchableOpacity, View } from "react-native";
 import { TopFive, TopSix } from "../SCREEN_COMPONENTS/Top";
 import { Image } from "react-native";
 
-export function Menu({ navigation, route }) {
+export function StartMenu({ navigation, route }) {
   const [loading, setLoading] = useState(false);
   const [fakeLoading, setFakeLoading] = useState(false);
   const [theme, setTheme] = useState("");
@@ -42,9 +43,6 @@ export function Menu({ navigation, route }) {
 
   useEffect(() => {
     getInDevice("theme", setTheme);
-    getInDevice("user", (person) => {
-      setMe(person);
-    });
     firebase_GetAllDocumentsListenerOrdered(
       setLoading,
       "Items",
@@ -99,15 +97,26 @@ export function Menu({ navigation, route }) {
   return (
     <SafeArea loading={loading} theme={theme}>
       <View style={[layout.padding_vertical, layout.relative]}>
-        <TopFive theme={theme} title={"Menu"} caption={"Made fresh daily."} />
-        <View style={[layout.absolute, { top: 12, right: 0, left: 0 }]}>
-          <View style={[layout.center]}>
+        <SeparatedView>
+          <SideBySide>
           <Image
               source={require("../assets/loading.png")}
               style={[{ width: 50, height: 50, borderRadius: 8 }]}
             />
+            <TopFive theme={theme} title={"Menu"} caption={"Made fresh daily."} />
+          </SideBySide>
+          
+          <View style={[{ position: "absolute", right: 5, zIndex: 1000 }]}>
+            <ButtonOne
+              backgroundColor={"transparent"}
+              onPress={() => {
+                navigation.navigate("login");
+              }}
+            >
+              <TextPill theme={theme} textSize={18} text={"login"} />
+            </ButtonOne>
           </View>
-        </View>
+        </SeparatedView>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* SPECIALS */}
@@ -129,7 +138,7 @@ export function Menu({ navigation, route }) {
                         layout.horizontal,
                       ]}
                       onPress={() => {
-                        navigation.navigate("item", {item: special.Item, percentage: special.Percentage})
+                        navigation.navigate("login");
                       }}
                     >
                       <AsyncImage
@@ -164,7 +173,7 @@ export function Menu({ navigation, route }) {
                     key={i}
                     style={[layout.relative]}
                     onPress={() => {
-                      navigation.navigate("item", { item });
+                      navigation.navigate("login");
                     }}
                   >
                     <AsyncImage
@@ -238,7 +247,7 @@ export function Menu({ navigation, route }) {
                 <TouchableOpacity
                   key={i}
                   onPress={() => {
-                    navigation.navigate("item", { item });
+                    navigation.navigate("login");
                   }}
                 >
                   <View style={[layout.horizontal]}>
@@ -264,21 +273,6 @@ export function Menu({ navigation, route }) {
 
         <Spacer height={60} />
       </ScrollView>
-
-      {/*  */}
-      <MenuBar
-        theme={theme}
-        options={[
-          { Icon: "cafe", Route: "menu" },
-          { Icon: "reader", Route: "orders" },
-          { Icon: "notifications", Route: "updates" },
-          { Icon: "person", Route: "profile" },
-          { Icon: "cart", Route: "cart" },
-        ]}
-        navigation={navigation}
-        route={route}
-        iconSize={24}
-      />
     </SafeArea>
   );
 }

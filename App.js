@@ -12,6 +12,7 @@ import { CartReview } from "./MAIN/CartReview";
 import { Orders } from "./MAIN/Orders";
 import { Profile } from "./MAIN/Profile";
 import { Updates } from "./MAIN/Updates";
+import { StartMenu } from "./MAIN/StartMenu";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,14 @@ export default function App() {
         <Stack.Screen
           name="start"
           component={Start}
+          options={{
+            headerShown: false,
+            animation: "fade",
+          }}
+        />
+        <Stack.Screen
+          name="start-menu"
+          component={StartMenu}
           options={{
             headerShown: false,
             animation: "fade",
