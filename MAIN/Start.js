@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {
   SafeArea,
   auth_IsUserSignedIn,
+  function_NotificationsSetup,
   getInDevice,
   setInDevice,
 } from "../EVERYTHING/BAGEL/Things";
@@ -15,6 +16,7 @@ export function Start({ navigation, route }) {
 
   useEffect(() => {
     getInDevice("theme", setTheme);
+    
     auth_IsUserSignedIn(
       setLoading,
       navigation,
@@ -23,6 +25,7 @@ export function Start({ navigation, route }) {
       null,
       (user) => {
         setInDevice("user", user);
+        function_NotificationsSetup(user.id)
       }
     );
   }, []);
