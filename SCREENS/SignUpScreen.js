@@ -48,6 +48,7 @@ export function SignUpScreen({ navigation, setLoading, redirect, theme }) {
             LastName: lastName,
             Email: email,
             Phone: phone,
+            Points: 0
             // OTHER PROPERTIES
           };
           auth_CreateUser(
