@@ -1,4 +1,4 @@
-import { Alert, KeyboardAvoidingView, Platform, View } from "react-native";
+import { Alert, Image, KeyboardAvoidingView, Platform, View } from "react-native";
 import {
   ButtonOne,
   LinkOne,
@@ -7,6 +7,7 @@ import {
   auth_ResetPassword,
   auth_SignIn,
   format,
+  height,
   layout,
   themedBackgroundColor,
   themedButtonColor,
@@ -68,6 +69,12 @@ export function LoginScreen({ navigation, setLoading, redirect, theme }) {
             Login
           </TextView>
           <TextView theme={theme}>Welcome back!</TextView>
+        </View>
+        <View>
+          <Image
+            source={require("../assets/loading.png")}
+            style={[{ width: "100%", height: height * 0.3, objectFit: "contain" }]}
+          />
         </View>
         <View style={[layout.vertical]}>
           <TextFieldOne
